@@ -34,15 +34,29 @@ class Game {
         let cell = table[index]
         if cell == .empty {
             table[index] = player.square
+            
+            if checkFinish() {
+                situation = .final
+            } else {
+                situation = situation.opposite
+            }
+            
         }
     }
     
+    func checkFinish() -> Bool {
+        if table.filter({ $0 == SquareType.empty }).count == 0 {
+            return true
+        }
+        return false
+    }
     
 }
 
 enum PlayerType {
     case player, op
 }
+
 extension PlayerType {
     var sign: String {
         switch self {
@@ -68,6 +82,14 @@ enum SquareType {
 
 enum GameSituation {
     case playerTurn, opTurn, final
+}
+extension GameSituation {
+    var opposite: GameSituation {
+        if self == .playerTurn {
+            return .opTurn
+        }
+        return .playerTurn
+    }
 }
 
 protocol GameDelegate {
