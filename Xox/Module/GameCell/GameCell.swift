@@ -11,14 +11,21 @@ import UIKit
 
 class GameCell: UICollectionViewCell {
     @IBOutlet weak var clabel: UILabel!
-    var vm: GameCellVM =  GameCellVM() {
-        didSet {
-            self.clabel.text = self.vm.sign
-        }
-    }
-     
-    override func awakeFromNib() {
-        super.awakeFromNib() 
+    
+    var vm: GameCellVM = GameCellVM()
+    
+    func initialize(vm: GameCellVM){
+        self.vm = vm
+        
         clabel.text = vm.sign
+        if vm.success {
+            self.contentView.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else {
+            self.contentView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        }
+        
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }

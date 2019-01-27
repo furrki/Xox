@@ -8,38 +8,57 @@
 
 import Foundation
 
-class GameVM {
+class GameVM: GameDelegate {
     var gameTableChanged: (()->())?
     var gameTableClicked: (()->())?
     var reloadTableViewClosure: (()->())?
+    var endGame: (()->())?
+    
+    var cellModels: [GameCellVM] = []
     
     init(){
+        Game.shared = Game()
         Game.shared.dlg = self
+        for square in Game.shared.table {
+            let gcvm = GameCellVM()
+            if let playerType = square.playerType {
+                gcvm.sign = playerType.sign
+            }
+            cellModels.append(gcvm)
+        }
+        
     }
     
     func getCellViewModel( at indexPath: IndexPath ) -> GameCellVM {
-        let cvm = GameCellVM()
-        if Game.shared.table[indexPath.row] == .player {
-            cvm.sign = "X"
-        } else if Game.shared.table[indexPath.row] == .op {
-            cvm.sign = "O"
-        } else {
-            cvm.sign = ""
-        }
-        //        self.reloadTableViewClosure?()
-        return cvm
+        return cellModels[indexPath.row]
     }
     
     func clickItem(at indexPath: IndexPath) {
         Game.shared.doMove(at: indexPath.row, who: .player)
     }
-}
-
-extension GameVM: GameDelegate {
-    func game(tableChanged table: [SquareType]) {
-        self.reloadTableViewClosure?()
+    
+    func game(finished whoWon: PlayerType, condition: [Int]) {
+        for index in condition {
+            cellModels[index].success = true
+        }
+        reloadTableViewClosure?()
+        let _ = setTimeout(delay: 2.0) {
+            self.endGame?()
+        }
+    }
+    
+    func game(tableChanged index: Int) {
+        if Game.shared.table[index] == .player {
+            cellModels[index].sign = "X"
+        } else if Game.shared.table[index] == .op {
+            cellModels[index].sign = "O"
+        } else {
+            cellModels[index].sign = ""
+        }
+        reloadTableViewClosure?()
     }
 }
+
 
 
 

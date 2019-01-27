@@ -35,6 +35,7 @@ class GameVC: UIViewController {
     func initVM() {
         vm.gameTableChanged = {
             self.collectionView.reloadData()
+             
         }
         vm.gameTableClicked = {
             self.collectionView.reloadData()
@@ -43,6 +44,9 @@ class GameVC: UIViewController {
             DispatchQueue.main.async {
                 self!.collectionView.reloadData()
             }
+        }
+        vm.endGame = {
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -63,9 +67,7 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         
         let cellVM = vm.getCellViewModel( at: indexPath )
-        cell.vm = cellVM
-        print(cell.clabel.text!)
-        
+        cell.initialize(vm: cellVM) 
         return cell
     }
     

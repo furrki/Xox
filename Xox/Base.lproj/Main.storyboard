@@ -89,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxF-kr-R2p">
-                                <rect key="frame" x="22" y="57" width="331" height="500"/>
+                                <rect key="frame" x="22" y="167" width="331" height="332"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TIx-DL-gqz">
                                         <rect key="frame" x="8" y="8" width="315" height="315"/>
@@ -141,10 +141,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XVD-G9-jRr" firstAttribute="bottom" secondItem="YxF-kr-R2p" secondAttribute="bottom" constant="110" id="LUj-7G-e79"/>
+                            <constraint firstItem="XVD-G9-jRr" firstAttribute="bottom" secondItem="YxF-kr-R2p" secondAttribute="bottom" constant="168" id="LUj-7G-e79"/>
                             <constraint firstAttribute="trailing" secondItem="Qwx-9w-6cv" secondAttribute="trailing" id="aEC-wa-M1P"/>
                             <constraint firstItem="Qwx-9w-6cv" firstAttribute="bottom" secondItem="XVD-G9-jRr" secondAttribute="bottom" id="b7I-bO-dvL"/>
-                            <constraint firstItem="YxF-kr-R2p" firstAttribute="top" secondItem="XVD-G9-jRr" secondAttribute="top" constant="37" id="iFe-Od-hkW"/>
+                            <constraint firstItem="YxF-kr-R2p" firstAttribute="top" secondItem="XVD-G9-jRr" secondAttribute="top" constant="147" id="iFe-Od-hkW"/>
                             <constraint firstItem="YxF-kr-R2p" firstAttribute="leading" secondItem="XVD-G9-jRr" secondAttribute="leading" constant="22" id="kyN-gT-isX"/>
                             <constraint firstItem="Qwx-9w-6cv" firstAttribute="top" secondItem="0mw-SG-sy5" secondAttribute="top" id="ln0-HT-nQN"/>
                             <constraint firstItem="Qwx-9w-6cv" firstAttribute="leading" secondItem="0mw-SG-sy5" secondAttribute="leading" id="rBT-Sg-G0p"/>
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAu-MO-j8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="134"/>
+            <point key="canvasLocation" x="792.79999999999995" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>

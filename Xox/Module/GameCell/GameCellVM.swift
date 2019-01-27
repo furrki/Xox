@@ -10,9 +10,12 @@ import Foundation
 class GameCellVM {
     var sign: String = "" {
         didSet {
-            if reloadClosure != nil {
-                reloadClosure!()
-            }
+            reloadClosure?()
+        }
+    }
+    var success: Bool = false {
+        didSet {
+            reloadClosure?()
         }
     }
     
