@@ -13,7 +13,14 @@ class GameCellVM {
             reloadClosure?()
         }
     }
+    
     var success: Bool = false {
+        didSet {
+            reloadClosure?()
+        }
+    }
+    
+    var fail: Bool = false {
         didSet {
             reloadClosure?()
         }

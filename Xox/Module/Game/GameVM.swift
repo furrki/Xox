@@ -39,7 +39,11 @@ class GameVM: GameDelegate {
     
     func game(finished whoWon: PlayerType, condition: [Int]) {
         for index in condition {
-            cellModels[index].success = true
+            if whoWon == .player {
+                cellModels[index].success = true
+            } else {
+                cellModels[index].fail = true
+            }
         }
         reloadTableViewClosure?()
         let _ = setTimeout(delay: 2.0) {
@@ -49,9 +53,9 @@ class GameVM: GameDelegate {
     
     func game(tableChanged index: Int) {
         if Game.shared.table[index] == .player {
-            cellModels[index].sign = "X"
+            cellModels[index].sign = PlayerType.player.sign
         } else if Game.shared.table[index] == .op {
-            cellModels[index].sign = "O"
+            cellModels[index].sign = PlayerType.op.sign
         } else {
             cellModels[index].sign = ""
         }
