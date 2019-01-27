@@ -10,6 +10,7 @@ import Foundation
 
 class Game {
     static var shared = Game()
+    var dlg: GameDelegate?
     
     var situation: GameSituation = .playerTurn
     
@@ -35,10 +36,16 @@ class Game {
         if cell == .empty {
             table[index] = player.square
             
+            dlg?.game(tableChanged: table)
             if checkFinish() {
                 situation = .final
             } else {
                 situation = situation.opposite
+                
+                if player == .player {
+                    let decidedMove = ai.decide()
+                    doMove(at: decidedMove, who: .op)
+                }
             }
             
         }
@@ -53,6 +60,12 @@ class Game {
     
 }
 
+protocol GameDelegate {
+    func game(tableChanged table: [SquareType])
+}
+
+
+//============== Player Type
 enum PlayerType {
     case player, op
 }
@@ -76,10 +89,12 @@ extension PlayerType {
     }
 }
 
+//------------------
+
 enum SquareType {
     case player, op, empty
 }
-
+//----------------------
 enum GameSituation {
     case playerTurn, opTurn, final
 }
@@ -91,8 +106,6 @@ extension GameSituation {
         return .playerTurn
     }
 }
+//------------------------------
 
-protocol GameDelegate {
-    func game(contents: [Bool])
-}
 
