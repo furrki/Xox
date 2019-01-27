@@ -37,12 +37,14 @@ class GameVM: GameDelegate {
         Game.shared.doMove(at: indexPath.row, who: .player)
     }
     
-    func game(finished whoWon: PlayerType, condition: [Int]) {
-        for index in condition {
-            if whoWon == .player {
-                cellModels[index].success = true
-            } else {
-                cellModels[index].fail = true
+    func game(finished whoWon: PlayerType?, condition: [Int]?) {
+        if let condition = condition, let whoWon = whoWon {
+            for index in condition {
+                if whoWon == .player {
+                    cellModels[index].success = true
+                } else {
+                    cellModels[index].fail = true
+                }
             }
         }
         reloadTableViewClosure?()

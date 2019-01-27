@@ -44,7 +44,7 @@ class Game {
             if checkFinish() {
                 situation = .final
                 
-                dlg?.game(finished: whoWon()!, condition: wonCondition()!)
+                dlg?.game(finished: whoWon(), condition: wonCondition())
             } else {
                 situation = situation.opposite
                 if player == .player {
@@ -82,7 +82,7 @@ class Game {
 
 protocol GameDelegate {
     func game(tableChanged index: Int)
-    func game(finished whoWon: PlayerType, condition: [Int])
+    func game(finished whoWon: PlayerType?, condition: [Int]?)
 }
 
 
