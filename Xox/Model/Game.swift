@@ -21,14 +21,16 @@ class Game {
     var table: [SquareType] = []
     
     init() {
-        if Bool.random() {
-            situation = .opTurn
-        }
+        
         for _ in 1...9 {
             table.append(.empty)
         }
         
         ai = AI(game: self)
+        if Bool.random() {
+            situation = .opTurn
+            doMove(at: ai.decide(), who: .op)
+        }
     }
     
     func doMove(at index: Int, who player: PlayerType) {
@@ -43,8 +45,7 @@ class Game {
                 situation = situation.opposite
                 
                 if player == .player {
-                    let decidedMove = ai.decide()
-                    doMove(at: decidedMove, who: .op)
+                    doMove(at: ai.decide(), who: .op)
                 }
             }
             

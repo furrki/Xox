@@ -17,12 +17,14 @@ class AI {
     }
     
     func decide() -> Int{
-        for (i, cell) in self.game.table.enumerated() {
-            if cell == .empty {
-                return i
-            }
+        if game.checkFinish() {
+            return -1
         }
-        return 0
+        var decided = Int.random(in: 0..<self.game.table.count)
+        while self.game.table[decided] != SquareType.empty {
+            decided = Int.random(in: 0..<self.game.table.count)
+        }
+        return decided
     }
 
 }
