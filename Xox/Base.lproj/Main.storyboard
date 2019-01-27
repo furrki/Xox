@@ -136,6 +136,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XVD-G9-jRr"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="TIx-DL-gqz" id="OKD-PB-vyK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAu-MO-j8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

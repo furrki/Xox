@@ -9,5 +9,6 @@
 import Foundation
 
 class GameVM {
-    
+    var gameTableChanged: (()->())?
+    var gameTableClicked: (()->())?
 }
