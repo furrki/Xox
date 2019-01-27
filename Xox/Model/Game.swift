@@ -43,6 +43,7 @@ class Game {
             dlg?.game(tableChanged: index)
             if checkFinish() {
                 situation = .final
+                
                 dlg?.game(finished: whoWon()!, condition: wonCondition()!)
             } else {
                 situation = situation.opposite
