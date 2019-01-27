@@ -10,6 +10,7 @@ import UIKit
 
 class GameVC: UIViewController {
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     lazy var vm: GameVM = {
         return GameVM()
@@ -18,7 +19,13 @@ class GameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initViews()
         initVM()
+    }
+    
+    func initViews(){
+        collectionView.layer.cornerRadius = 6.0
+        containerView.layer.cornerRadius = 6.0
     }
     
     func initVM() {

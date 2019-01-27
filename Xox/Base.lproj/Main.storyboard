@@ -138,6 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="TIx-DL-gqz" id="OKD-PB-vyK"/>
+                        <outlet property="containerView" destination="YxF-kr-R2p" id="uXy-YM-23U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAu-MO-j8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
