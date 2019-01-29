@@ -30,11 +30,11 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPi-Ij-za1">
-                                        <rect key="frame" x="69" y="218" width="147" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPi-Ij-za1">
+                                        <rect key="frame" x="67" y="220" width="150" height="60"/>
                                         <color key="backgroundColor" red="0.7843137255" green="0.83921568629999999" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="e9i-Ve-0mo"/>
+                                            <constraint firstAttribute="height" constant="60" id="e9i-Ve-0mo"/>
                                         </constraints>
                                         <inset key="contentEdgeInsets" minX="5" minY="10" maxX="5" maxY="10"/>
                                         <state key="normal" title="Start Game">
@@ -47,10 +47,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="uPi-Ij-za1" firstAttribute="top" secondItem="z9w-cK-MMy" secondAttribute="bottom" constant="121" id="8YO-Dp-JvK"/>
+                                    <constraint firstItem="uPi-Ij-za1" firstAttribute="top" secondItem="z9w-cK-MMy" secondAttribute="bottom" constant="123" id="8YO-Dp-JvK"/>
                                     <constraint firstItem="z9w-cK-MMy" firstAttribute="top" secondItem="GLa-73-JZ2" secondAttribute="top" constant="51" id="8ts-8g-lDQ"/>
                                     <constraint firstItem="z9w-cK-MMy" firstAttribute="centerX" secondItem="uPi-Ij-za1" secondAttribute="centerX" id="9PB-YA-0r6"/>
-                                    <constraint firstItem="uPi-Ij-za1" firstAttribute="leading" secondItem="GLa-73-JZ2" secondAttribute="leading" constant="69" id="Ybv-iE-ggs"/>
+                                    <constraint firstItem="uPi-Ij-za1" firstAttribute="leading" secondItem="GLa-73-JZ2" secondAttribute="leading" constant="67" id="Ybv-iE-ggs"/>
                                     <constraint firstItem="z9w-cK-MMy" firstAttribute="centerX" secondItem="GLa-73-JZ2" secondAttribute="centerX" id="aTY-7v-7ZW"/>
                                 </constraints>
                             </view>
